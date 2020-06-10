@@ -50,7 +50,7 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function mortgageCalculator(P, I, N) {
+/*function mortgageCalculator(P, I, N) {
     let name = "Anatoliy"
     let monthlyInterestRate = I / 12;
     let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
@@ -70,7 +70,7 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
 
-function mortgageCalculator(P, I, N) {
+/*function mortgageCalculator(P, I, N) {
     let name = "Anatoliy"
     let monthlyInterestRate = I / 12;
     let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
@@ -102,10 +102,15 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 function mortgageCalculator(P, I, N, C) {
     
     
-    
+       
         if (C > 740) 
         {
-            I === I - 0.005;
+            I= I*0.95;
+        }
+
+        else if (C < 660) 
+        {
+            I = I * 1.05;
         }
     let name = "Anatoliy"
     let monthlyInterestRate = I / 12;
@@ -117,7 +122,7 @@ function mortgageCalculator(P, I, N, C) {
 
 
 }
- console.log(mortgageCalculator(200000, 0.05, 30, 790))
+ console.log(mortgageCalculator(200000, 0.05, 30, 500))
 
 
 

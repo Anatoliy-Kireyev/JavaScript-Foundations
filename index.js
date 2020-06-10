@@ -5,9 +5,9 @@ console.log("Hello!")
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-//let principal = 200000;
-//let interestRate = 0.05;
-//let years = 30;
+//let P = 200000;
+//let I = 0.05;
+//let N = 30;
 //const name = 'Anatoliy'
 
 
@@ -99,13 +99,13 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 */
 
 
-function mortgageCalculator(P, I, N, C) {
+/*function mortgageCalculator(P, I, N, C) {
     
     
        
         if (C > 740) 
         {
-            I= I*0.95;
+            I = I*0.95;
         }
 
         else if (C < 660) 
@@ -128,7 +128,8 @@ function mortgageCalculator(P, I, N, C) {
 
 
 // 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
+/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment 
+for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
 
 For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
@@ -143,7 +144,21 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate(P, I, N) {
+   for(let i=0; i<9; i++)
+   {
+let name = "Anatoliy"
+let monthlyInterestRate = I / 12;
+let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
+let numerator = P * n1 * monthlyInterestRate;
+let denominator = n1 -1;
+let monthlyRate = numerator / denominator;
+return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`
+   }
 
+
+}
+console.log(variableInterestRate(200000, 0.05, 30))
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//

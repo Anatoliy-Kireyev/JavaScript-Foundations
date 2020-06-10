@@ -39,10 +39,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-//let n1 = (1 + I)*Math.Pow;
-//let numerator = principal * n1 * I;
-//let denominator = n1 - 1;
-//let monthlyRate = 1073.64;
+//let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
+//let numerator = P * n1 * monthlyInterestRate;
+//let denominator = n1 -1;
+//let monthlyRate = numerator / denominator;
 
 
 // 🏡 Task 3: Function
@@ -53,7 +53,6 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 function mortgageCalculator(P, I, N) {
     let name = "Anatoliy"
     let monthlyInterestRate = I / 12;
-    periods = N * 12;
     let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
     let numerator = P * n1 * monthlyInterestRate;
     let denominator = n1 -1;
@@ -66,10 +65,25 @@ function mortgageCalculator(P, I, N) {
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
-
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+
+
+function mortgageCalculator(P, I, N) {
+    let name = "Anatoliy"
+    let monthlyInterestRate = I / 12;
+    let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
+    let numerator = P * n1 * monthlyInterestRate;
+    let denominator = n1 -1;
+    let monthlyRate = numerator / denominator;
+    return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`
+
+
+}
+ console.log(mortgageCalculator(200000, 0.05, 30))
+
+
 
 
 
@@ -78,10 +92,32 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
-Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% 
+and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
+
+
+function mortgageCalculator(P, I, N, C) {
+    
+    
+    
+        if (C > 740) 
+        {
+            I === I - 0.005;
+        }
+    let name = "Anatoliy"
+    let monthlyInterestRate = I / 12;
+    let n1 = Math.pow(1 + monthlyInterestRate, N * 12);
+    let numerator = P * n1 * monthlyInterestRate;
+    let denominator = n1 -1;
+    let monthlyRate = numerator / denominator;
+    return `${name}, your monthly rate is ${monthlyRate.toFixed(2)}`
+
+
+}
+ console.log(mortgageCalculator(200000, 0.05, 30, 790))
 
 
 
